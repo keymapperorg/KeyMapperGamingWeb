@@ -1,0 +1,718 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Privacy Policy — Key Mapper Gaming Pro</title>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg: #0e0f13;
+      --surface: #16181f;
+      --border: #272a35;
+      --accent: #5b8cff;
+      --accent-soft: rgba(91, 140, 255, 0.12);
+      --accent-glow: rgba(91, 140, 255, 0.25);
+      --text-primary: #e8eaf0;
+      --text-secondary: #8b8fa8;
+      --text-muted: #565a6e;
+      --callout-bg: rgba(91, 140, 255, 0.07);
+      --callout-border: rgba(91, 140, 255, 0.3);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--text-primary);
+      font-family: 'DM Sans', sans-serif;
+      font-size: 16px;
+      line-height: 1.75;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── Background texture ── */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 80% 50% at 50% -10%, rgba(91,140,255,0.08) 0%, transparent 60%),
+        radial-gradient(ellipse 40% 30% at 90% 80%, rgba(91,140,255,0.05) 0%, transparent 50%);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    /* ── Layout ── */
+    .wrapper {
+      position: relative;
+      z-index: 1;
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 64px 24px 96px;
+    }
+
+    /* ── Header ── */
+    header {
+      margin-bottom: 56px;
+      padding-bottom: 40px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--accent-soft);
+      border: 1px solid var(--callout-border);
+      color: var(--accent);
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 5px 12px;
+      border-radius: 100px;
+      margin-bottom: 20px;
+    }
+
+    .badge::before {
+      content: '';
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--accent);
+      box-shadow: 0 0 8px var(--accent);
+      animation: pulse 2s ease-in-out infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.4; }
+    }
+
+    header h1 {
+      font-family: 'DM Serif Display', serif;
+      font-size: clamp(2rem, 5vw, 3rem);
+      font-weight: 400;
+      line-height: 1.15;
+      color: var(--text-primary);
+      letter-spacing: -0.02em;
+      margin-bottom: 12px;
+    }
+
+    header h1 em {
+      font-style: italic;
+      color: var(--accent);
+    }
+
+    .meta {
+      font-size: 13px;
+      color: var(--text-muted);
+      font-weight: 400;
+    }
+
+    /* ── TOC ── */
+    .toc {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 24px 28px;
+      margin-bottom: 56px;
+    }
+
+    .toc-title {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 14px;
+    }
+
+    .toc ol {
+      list-style: none;
+      counter-reset: toc;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4px 24px;
+    }
+
+    @media (max-width: 520px) {
+      .toc ol { grid-template-columns: 1fr; }
+    }
+
+    .toc li {
+      counter-increment: toc;
+    }
+
+    .toc a {
+      color: var(--text-secondary);
+      text-decoration: none;
+      font-size: 13.5px;
+      font-weight: 400;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 3px 0;
+      transition: color 0.15s;
+    }
+
+    .toc a::before {
+      content: counter(toc, decimal-leading-zero);
+      font-size: 11px;
+      color: var(--text-muted);
+      font-variant-numeric: tabular-nums;
+      min-width: 22px;
+    }
+
+    .toc a:hover { color: var(--accent); }
+
+    /* ── Sections ── */
+    section {
+      margin-bottom: 52px;
+      scroll-margin-top: 24px;
+    }
+
+    h2 {
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.45rem;
+      font-weight: 400;
+      color: var(--text-primary);
+      margin-bottom: 18px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    h2 .num {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 11px;
+      font-weight: 600;
+      color: var(--accent);
+      letter-spacing: 0.05em;
+      background: var(--accent-soft);
+      border: 1px solid var(--callout-border);
+      padding: 2px 7px;
+      border-radius: 4px;
+    }
+
+    p {
+      color: var(--text-secondary);
+      margin-bottom: 14px;
+      font-size: 15px;
+    }
+
+    p:last-child { margin-bottom: 0; }
+
+    /* ── Lists ── */
+    ul, ol {
+      color: var(--text-secondary);
+      font-size: 15px;
+      padding-left: 0;
+      list-style: none;
+      margin-bottom: 14px;
+    }
+
+    ul li, ol li {
+      position: relative;
+      padding-left: 20px;
+      margin-bottom: 8px;
+    }
+
+    ul li::before {
+      content: '';
+      position: absolute;
+      left: 4px;
+      top: 10px;
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background: var(--accent);
+      opacity: 0.6;
+    }
+
+    ol {
+      counter-reset: ol;
+    }
+    ol li { counter-increment: ol; }
+    ol li::before {
+      content: counter(ol) '.';
+      position: absolute;
+      left: 0;
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--accent);
+      top: 2px;
+    }
+
+    li strong {
+      color: var(--text-primary);
+      font-weight: 500;
+    }
+
+    /* ── Callout / Note ── */
+    .callout {
+      background: var(--callout-bg);
+      border-left: 2px solid var(--accent);
+      border-radius: 0 8px 8px 0;
+      padding: 16px 20px;
+      margin: 20px 0;
+      font-size: 14px;
+      color: var(--text-secondary);
+    }
+
+    .callout strong {
+      color: var(--accent);
+      font-weight: 600;
+      display: block;
+      margin-bottom: 6px;
+      font-size: 12px;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+
+    /* ── Third-party table ── */
+    .services {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      overflow: hidden;
+      margin-top: 18px;
+    }
+
+    .service-row {
+      display: grid;
+      grid-template-columns: 140px 1fr auto;
+      gap: 16px;
+      padding: 14px 20px;
+      align-items: center;
+      border-bottom: 1px solid var(--border);
+      font-size: 14px;
+    }
+
+    .service-row:last-child { border-bottom: none; }
+
+    .service-row .purpose {
+      color: var(--text-muted);
+      font-size: 13px;
+    }
+
+    .service-row .name {
+      color: var(--text-primary);
+      font-weight: 500;
+    }
+
+    .service-row a {
+      color: var(--accent);
+      text-decoration: none;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      white-space: nowrap;
+      opacity: 0.85;
+      transition: opacity 0.15s;
+    }
+
+    .service-row a:hover { opacity: 1; }
+
+    @media (max-width: 540px) {
+      .service-row {
+        grid-template-columns: 1fr auto;
+      }
+      .service-row .purpose { display: none; }
+    }
+
+    /* ── Retention table ── */
+    .retention {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-top: 14px;
+    }
+
+    .retention-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 14px 18px;
+    }
+
+    .retention-item .period {
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--accent);
+      background: var(--accent-soft);
+      border: 1px solid var(--callout-border);
+      padding: 3px 8px;
+      border-radius: 4px;
+      white-space: nowrap;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    .retention-item .desc {
+      font-size: 14px;
+      color: var(--text-secondary);
+    }
+
+    .retention-item .desc strong {
+      color: var(--text-primary);
+      font-weight: 500;
+    }
+
+    /* ── Rights grid ── */
+    .rights-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      margin-top: 14px;
+    }
+
+    @media (max-width: 520px) {
+      .rights-grid { grid-template-columns: 1fr; }
+    }
+
+    .right-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 16px;
+      transition: border-color 0.2s, background 0.2s;
+    }
+
+    .right-card:hover {
+      border-color: var(--callout-border);
+      background: rgba(91, 140, 255, 0.04);
+    }
+
+    .right-card .right-name {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--text-primary);
+      margin-bottom: 6px;
+    }
+
+    .right-card .right-desc {
+      font-size: 13px;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+
+    /* ── Contact block ── */
+    .contact-block {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 28px 32px;
+      margin-top: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .contact-block .contact-info strong {
+      display: block;
+      font-size: 15px;
+      font-weight: 500;
+      color: var(--text-primary);
+      margin-bottom: 4px;
+    }
+
+    .contact-block .contact-info span {
+      font-size: 13px;
+      color: var(--text-muted);
+    }
+
+    .contact-block a.email-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--accent);
+      color: #fff;
+      font-size: 13px;
+      font-weight: 600;
+      padding: 10px 20px;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: opacity 0.15s, transform 0.15s;
+      box-shadow: 0 4px 20px var(--accent-glow);
+    }
+
+    .contact-block a.email-btn:hover {
+      opacity: 0.9;
+      transform: translateY(-1px);
+    }
+
+    /* ── Footer ── */
+    footer {
+      border-top: 1px solid var(--border);
+      padding-top: 32px;
+      margin-top: 64px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    footer span {
+      font-size: 12px;
+      color: var(--text-muted);
+    }
+
+    footer a {
+      font-size: 12px;
+      color: var(--text-muted);
+      text-decoration: none;
+      transition: color 0.15s;
+    }
+
+    footer a:hover { color: var(--accent); }
+
+    /* ── Fade-in animation ── */
+    .wrapper {
+      animation: fadeUp 0.5s ease both;
+    }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(16px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+<div class="wrapper">
+
+  <!-- Header -->
+  <header>
+    <div class="badge">Legal Document</div>
+    <h1>Privacy <em>Policy</em></h1>
+    <p class="meta">Key Mapper Gaming Pro &nbsp;·&nbsp; Effective date: 8 June 2026</p>
+  </header>
+
+  <!-- Table of Contents -->
+  <nav class="toc" aria-label="Table of contents">
+    <p class="toc-title">Contents</p>
+    <ol>
+      <li><a href="#collected">What Information Is Collected</a></li>
+      <li><a href="#legal-basis">Legal Basis for Processing</a></li>
+      <li><a href="#shared">What Information Is Shared</a></li>
+      <li><a href="#third-party">Third-Party Services</a></li>
+      <li><a href="#transfers">International Data Transfers</a></li>
+      <li><a href="#use">How Information Is Used</a></li>
+      <li><a href="#retention">Data Retention</a></li>
+      <li><a href="#rights">Your Rights Under GDPR</a></li>
+      <li><a href="#complaint">Right to Lodge a Complaint</a></li>
+      <li><a href="#children">Children's Privacy</a></li>
+      <li><a href="#opting-out">Opting Out and Uninstalling</a></li>
+      <li><a href="#changes">Changes to This Policy</a></li>
+    </ol>
+  </nav>
+
+  <!-- Intro -->
+  <section>
+    <p>This Privacy Policy applies to the Key Mapper Gaming Pro app for mobile devices, together with any related services operated by sds100, collectively referred to as the "Application". sds100 is hereby referred to as the "Service Provider" and acts as the data controller for personal data collected through the Application.</p>
+    <p>The Service Provider is established in the Netherlands and processes personal data in accordance with the General Data Protection Regulation (EU) 2016/679 ("GDPR") and other applicable data protection laws.</p>
+  </section>
+
+  <!-- 1. What Information Is Collected -->
+  <section id="collected">
+    <h2><span class="num">01</span> What Information Is Collected</h2>
+    <p>The Application collects the following information when you download and use it. This information is stored locally on your device and is not automatically transmitted to any party.</p>
+    <p>Information collected locally includes:</p>
+    <ul>
+      <li>Your operating system version</li>
+      <li>The properties of any devices connected by a wired, wireless, or Bluetooth connection</li>
+      <li>The properties of any internal or connected devices, such as device model and input capabilities</li>
+      <li>Input events from any internal or connected devices</li>
+      <li>Your key maps and their settings</li>
+      <li>Package names of installed apps used in conjunction with the Application</li>
+      <li>App usage statistics such as session length and navigation within the Application</li>
+      <li>Device and Application logs</li>
+    </ul>
+    <div class="callout">
+      <strong>Note</strong>
+      While input events from internal and connected devices are not themselves personal information, it may be possible to extract personal information from them based on patterns of input events. To avoid collecting this information on your device, it is recommended not to use the Application when entering personal information such as passwords through internal and connected devices.
+    </div>
+  </section>
+
+  <!-- 2. Legal Basis -->
+  <section id="legal-basis">
+    <h2><span class="num">02</span> Legal Basis for Processing (GDPR)</h2>
+    <p>The Service Provider processes personal data only where a lawful basis exists under Article 6 of the GDPR. The applicable legal bases are:</p>
+    <ul>
+      <li><strong>Consent (Art. 6(1)(a)):</strong> When you opt in to sharing anonymous usage data or submit a bug report, you consent to the transmission and processing of that data. You may withdraw your consent at any time.</li>
+      <li><strong>Legitimate interests (Art. 6(1)(f)):</strong> Processing of crash logs and technical data submitted via bug reports is carried out to maintain and improve the Application. The Service Provider has assessed that this processing does not override your fundamental rights and freedoms.</li>
+      <li><strong>Performance of a contract (Art. 6(1)(b)):</strong> Data processed in connection with payment and subscription management (via Google Play Billing and RevenueCat) is necessary to fulfil the purchase or subscription you have entered into.</li>
+    </ul>
+  </section>
+
+  <!-- 3. What Information Is Shared -->
+  <section id="shared">
+    <h2><span class="num">03</span> What Information Is Shared</h2>
+    <p>The Application does not share information with any party without your consent.</p>
+    <p>The Application provides you with the capability to voluntarily share your collected information with the Service Provider in the following ways:</p>
+    <ul>
+      <li>When submitting a bug report or feedback within the Application</li>
+      <li>When opting in to sharing anonymous usage data</li>
+    </ul>
+    <p>Upon submitting information to the Service Provider, the information will be transmitted, retained, and used as described in this Privacy Policy.</p>
+  </section>
+
+  <!-- 4. Third-Party Services -->
+  <section id="third-party">
+    <h2><span class="num">04</span> Third-Party Services</h2>
+    <p>The Service Provider uses the following trusted third-party services solely to operate the Application. Each service has its own privacy policy governing their data practices. You are encouraged to review them.</p>
+    <div class="services">
+      <div class="service-row">
+        <span class="name">Google Play Billing</span>
+        <span class="purpose">Payment processing</span>
+        <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Privacy Policy ↗</a>
+      </div>
+      <div class="service-row">
+        <span class="name">RevenueCat</span>
+        <span class="purpose">Subscription &amp; purchase management</span>
+        <a href="https://www.revenuecat.com/privacy" target="_blank" rel="noopener">Privacy Policy ↗</a>
+      </div>
+      <div class="service-row">
+        <span class="name">Sentry</span>
+        <span class="purpose">Opt-in crash reporting &amp; analytics</span>
+        <a href="https://sentry.io/privacy/" target="_blank" rel="noopener">Privacy Policy ↗</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. International Transfers -->
+  <section id="transfers">
+    <h2><span class="num">05</span> International Data Transfers</h2>
+    <p>Some of the third-party services listed above (including RevenueCat and Sentry) are based in the United States. When data is transmitted to the Service Provider or these third parties, it may be transferred to and processed in countries outside the European Economic Area (EEA).</p>
+    <p>Where such transfers take place, the Service Provider ensures that appropriate safeguards are in place in accordance with GDPR Chapter V, including Standard Contractual Clauses (SCCs) approved by the European Commission, or reliance on adequacy decisions where applicable. You may request information about the specific safeguards in place by contacting the Service Provider at <a href="mailto:legal@keymapper.app" style="color:var(--accent);">legal@keymapper.app</a>.</p>
+  </section>
+
+  <!-- 6. How Information Is Used -->
+  <section id="use">
+    <h2><span class="num">06</span> How Information Is Used</h2>
+    <p>Information submitted to the Service Provider is used to improve Application performance and the user experience. This may involve:</p>
+    <ul>
+      <li>Analysing trends in app navigation to identify common use errors</li>
+      <li>Identifying popular games and key map layouts</li>
+      <li>Identifying bugs that occur in specific situations or on a specific group of devices</li>
+    </ul>
+  </section>
+
+  <!-- 7. Data Retention -->
+  <section id="retention">
+    <h2><span class="num">07</span> Data Retention</h2>
+    <p>The Service Provider retains submitted data only for as long as necessary for the purposes for which it was collected, or as required by applicable law.</p>
+    <div class="retention">
+      <div class="retention-item">
+        <span class="period">12 months</span>
+        <span class="desc"><strong>Bug reports &amp; crash logs</strong> — retained from the date of submission, then deleted.</span>
+      </div>
+      <div class="retention-item">
+        <span class="period">24 months</span>
+        <span class="desc"><strong>Opt-in analytics data</strong> — retained in line with usage trend analysis requirements.</span>
+      </div>
+      <div class="retention-item">
+        <span class="period">Up to 7 years</span>
+        <span class="desc"><strong>Payment &amp; subscription records</strong> — retained as required by applicable tax and financial regulations.</span>
+      </div>
+    </div>
+    <p style="margin-top:16px;">To request early deletion of your data, please contact the Service Provider at <a href="mailto:legal@keymapper.app" style="color:var(--accent);">legal@keymapper.app</a>.</p>
+  </section>
+
+  <!-- 8. Your Rights Under GDPR -->
+  <section id="rights">
+    <h2><span class="num">08</span> Your Rights Under GDPR</h2>
+    <p>If you are located in the European Economic Area, you have the following rights regarding your personal data:</p>
+    <div class="rights-grid">
+      <div class="right-card">
+        <div class="right-name">Right of Access</div>
+        <div class="right-desc">Request a copy of the personal data the Service Provider holds about you.</div>
+      </div>
+      <div class="right-card">
+        <div class="right-name">Right to Rectification</div>
+        <div class="right-desc">Request correction of inaccurate or incomplete personal data.</div>
+      </div>
+      <div class="right-card">
+        <div class="right-name">Right to Erasure</div>
+        <div class="right-desc">Request deletion of your personal data, subject to certain exceptions under applicable law.</div>
+      </div>
+      <div class="right-card">
+        <div class="right-name">Right to Restriction</div>
+        <div class="right-desc">Request that the Service Provider restricts processing of your personal data in certain circumstances.</div>
+      </div>
+      <div class="right-card">
+        <div class="right-name">Right to Portability</div>
+        <div class="right-desc">Request a copy of your data in a structured, commonly used, machine-readable format.</div>
+      </div>
+      <div class="right-card">
+        <div class="right-name">Right to Object</div>
+        <div class="right-desc">Object to processing based on legitimate interests. Processing will cease unless compelling grounds can be demonstrated.</div>
+      </div>
+      <div class="right-card" style="grid-column: 1 / -1;">
+        <div class="right-name">Right to Withdraw Consent</div>
+        <div class="right-desc">Where processing is based on your consent, you may withdraw it at any time. For opt-in analytics, you can withdraw consent directly within the Application settings, or by contacting the Service Provider. Withdrawal does not affect the lawfulness of processing before withdrawal.</div>
+      </div>
+    </div>
+    <p style="margin-top:16px;">To exercise any of these rights, contact the Service Provider at <a href="mailto:legal@keymapper.app" style="color:var(--accent);">legal@keymapper.app</a>. The Service Provider will respond within 30 days of receipt of your request.</p>
+  </section>
+
+  <!-- 9. Complaint -->
+  <section id="complaint">
+    <h2><span class="num">09</span> Right to Lodge a Complaint</h2>
+    <p>If you believe the Service Provider has not handled your personal data in accordance with applicable law, you have the right to lodge a complaint with a supervisory authority.</p>
+    <p>You also have the right to lodge a complaint with the supervisory authority in your EU member state of residence or place of work.</p>
+  </section>
+
+  <!-- 10. Children's Privacy -->
+  <section id="children">
+    <h2><span class="num">10</span> Children's Privacy</h2>
+    <p>The Application is not directed at children under the age of 16. The Service Provider does not knowingly collect personal data from children under 16. If you believe a child under 16 has provided personal data through the Application, please contact the Service Provider at <a href="mailto:legal@keymapper.app" style="color:var(--accent);">legal@keymapper.app</a> so that it can be deleted promptly.</p>
+  </section>
+
+  <!-- 11. Opting Out -->
+  <section id="opting-out">
+    <h2><span class="num">11</span> Opting Out and Uninstalling</h2>
+    <p>You can stop the collection of information on your mobile device by uninstalling the Application. Uninstalling will prevent the Application from collecting further data, but does not automatically delete information already transmitted to the Service Provider or to third parties.</p>
+    <p>To opt out of anonymous usage data sharing, you can do so directly within the Application settings at any time. To request deletion of data already transmitted, contact the Service Provider at <a href="mailto:legal@keymapper.app" style="color:var(--accent);">legal@keymapper.app</a>.</p>
+  </section>
+
+  <!-- 12. Changes -->
+  <section id="changes">
+    <h2><span class="num">12</span> Changes to This Privacy Policy</h2>
+    <p>The Service Provider may update this Privacy Policy from time to time. You will be notified of material changes by the posting of an updated Privacy Policy with a revised effective date. Where required by law, the Service Provider will seek your consent to material changes before they take effect.</p>
+    <p>Previous versions of this Privacy Policy will be maintained and made available upon request by contacting the Service Provider at <a href="mailto:legal@keymapper.app" style="color:var(--accent);">legal@keymapper.app</a>.</p>
+  </section>
+
+  <!-- Contact -->
+  <section>
+    <h2>Contact Us</h2>
+    <p>If you have any questions regarding this Privacy Policy or the Service Provider's data practices, please get in touch.</p>
+    <div class="contact-block">
+      <div class="contact-info">
+        <strong>sds100 — Key Mapper Gaming Pro</strong>
+        <span>Data Controller &nbsp;·&nbsp; Established in the Netherlands</span>
+      </div>
+      <a href="mailto:legal@keymapper.app" class="email-btn">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+        legal@keymapper.app
+      </a>
+    </div>
+  </section>
+
+  <footer>
+    <span>© 2026 sds100 — Key Mapper Gaming Pro</span>
+    <span>GDPR compliant &nbsp;·&nbsp; Netherlands</span>
+  </footer>
+
+</div>
+</body>
+</html>
